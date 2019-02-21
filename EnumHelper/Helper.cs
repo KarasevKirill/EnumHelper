@@ -51,6 +51,7 @@ namespace EnumHelper
         /// со строкой поиска.
         /// Если совпадений нет, то либо вернется 0, либо бросается ArgumentException, в
         /// зависимости от свойства ReturnDefaultValue
+        /// Актуально для C# версий до 7.3, в 7.3 и выше можно реализовать проще
         /// </summary>
         /// <typeparam name="E">Enum, по значения которого осуществляется поиск</typeparam>
         /// <param name="description">Значение аттрибута Description, по которому ведется поиск значения Enum</param>
