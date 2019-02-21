@@ -55,7 +55,7 @@ namespace EnumsAttribute
     public enum DocType : byte
     {
         /// <summary>
-        /// Ноль считается как не инициализированное значение
+        /// Ноль считается как неинициализированное значение
         /// </summary>
         UndefinedValue = 0,
 

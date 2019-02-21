@@ -58,10 +58,14 @@ namespace EnumHelper
         /// <returns></returns>
         public E GetValueBySearchString<E>(string searchString) where E : struct, IConvertible
         {
-            if (!typeof(E).IsEnum)
+            var currentType = typeof(E);
+
+            if (!currentType.IsEnum)
                 throw new ArgumentException("Этому методу для работы необходим Enum");
 
-            foreach (var currentValue in Enum.GetValues(typeof(E)))
+            var values = Enum.GetValues(currentType);
+
+            foreach (var currentValue in values)
             {
                 string currentDescription = GetDisplayValue((Enum)currentValue);
 
@@ -69,7 +73,7 @@ namespace EnumHelper
                     return (E)currentValue;
             }
 
-            foreach (var currentValue in Enum.GetValues(typeof(E)))
+            foreach (var currentValue in values)
             {
                 string valueName = currentValue.ToString();
 
