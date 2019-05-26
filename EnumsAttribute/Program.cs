@@ -9,7 +9,7 @@ namespace EnumsAttribute
         {
             var helper = new Helper();
 
-            Console.WriteLine("Строковое представление значений перечисления, (у значений установлен аттрибут Description):");
+            Console.WriteLine("Строковое представление значений перечисления, (у значений установлен аттрибут Description");
             Console.WriteLine(helper.GetDisplayValue(DocType.FirstValue));
             Console.WriteLine(helper.GetDisplayValue(DocType.SecondValue));
             Console.WriteLine(helper.GetDisplayValue(DocType.ThirdValue));
@@ -23,22 +23,22 @@ namespace EnumsAttribute
             var secondSearch = "ThirdValue";
             var thirdSearch = "AAAAA";
 
-            Console.WriteLine($"Значение перечисления (поиск по аттрибуту значения, строка поиска: \"{firstSearch}\"):");           
+            Console.WriteLine($"Значение перечисления (поиск по аттрибуту значения, строка поиска: \"{firstSearch}\"");           
             Console.WriteLine(helper.GetValueBySearchString<DocType>(firstSearch));
             Console.WriteLine();
 
-            Console.WriteLine($"Значение перечисления (поиск по имени значения, строка поиска: \"{secondSearch}\"):");
+            Console.WriteLine($"Значение перечисления (поиск по имени значения, строка поиска: \"{secondSearch}\"");
             Console.WriteLine(helper.GetValueBySearchString<DocType>(secondSearch));
             Console.WriteLine();
            
-            Console.WriteLine($"Ищем несуществующее значение, ReturnDefaultValue == true (строка поиска: \"{thirdSearch}\"):");
+            Console.WriteLine($"Ищем несуществующее значение, ReturnDefaultValue == true (строка поиска: \"{thirdSearch}\"");
             helper.ReturnDefaultValue = true;
             Console.WriteLine(helper.GetValueBySearchString<DocType>(thirdSearch));
             Console.WriteLine();
 
             try
             {
-                Console.WriteLine($"Ищем несуществующее значение, ReturnDefaultValue == false (строка поиска: \"{thirdSearch}\"):");
+                Console.WriteLine($"Ищем несуществующее значение, ReturnDefaultValue == false (строка поиска: \"{thirdSearch}\"");
                 helper.ReturnDefaultValue = false;
                 Console.WriteLine(helper.GetValueBySearchString<DocType>(thirdSearch));
                 Console.WriteLine();
